@@ -4,11 +4,13 @@
 
 {% block content %}
     <div class="tour-detail" style="padding-top: 120px; padding-left: 250px;">
-        <h1>{{ tour.title }}</h1>
-        <img src="{{ tour.image.url }}" alt="{{ tour.title }}">
-        <p><strong>Price:</strong> {{ tour.price }} $</p>
-        <p>{{ tour.description }}</p>
-        
-        <a href="{% url 'home' %}" class="btn">Back to Tours</a>
+            <img src="{{ tour.image.url }}" alt="{{ tour.title }}">
+            <div class="detail">
+                <h1>{{ tour.title }}</h1>
+                <p><strong>Price:</strong> {{ tour.price }} $</p>
+                <p>{{ tour.description }}</p>
+            </div>
+            
+            <a href="{% url 'home' %}" class="btn">Back to Tours</a>
     </div>
 {% endblock %}
