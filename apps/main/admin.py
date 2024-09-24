@@ -3,8 +3,7 @@ from .models import Cities, Tours, CityTours
 
 @admin.register(Cities)
 class CitiesAdmin(admin.ModelAdmin):
-    list_display = ('city', 'country', 'description')  # Отображение полей в админке
-    fields = ['city', 'slug', 'country', 'description']  # Убедитесь, что 'id' не используется
+    list_display = ('city', 'slug', 'country', 'description', 'special_offer', 'image')  # Отображение полей в админке
 
 @admin.register(Tours)
 class ToursAdmin(admin.ModelAdmin):

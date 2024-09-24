@@ -24,3 +24,10 @@ class HotToursView(ListView):
     template_name = 'pages/hot_tours.html'
     context_object_name = 'tours'
     queryset = Tours.objects.filter(is_hot=True)
+
+
+class SpecialOffersView(ListView):
+    model = Cities 
+    template_name = 'pages/special_offers.html'
+    context_object_name = 'special_offers'
+    queryset = Cities.objects.filter(special_offer=True)
