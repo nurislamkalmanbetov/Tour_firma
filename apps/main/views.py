@@ -31,3 +31,10 @@ class SpecialOffersView(ListView):
     template_name = 'pages/special_offers.html'
     context_object_name = 'special_offers'
     queryset = Cities.objects.filter(special_offer=True)
+
+
+class HotelsView(ListView):
+    model = Hotels
+    template_name = 'pages/hotels.html'
+    context_object_name = 'hotels'
+    queryset = Hotels.objects.all()

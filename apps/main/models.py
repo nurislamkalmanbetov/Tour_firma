@@ -49,6 +49,24 @@ class CityTours(models.Model):
         return f'{self.city} {self.tour}'
     
 
+class Hotels(models.Model):
+    title = models.CharField('Название', max_length=100)
+    description = models.TextField('Описание')
+    stars = models.IntegerField('Звезды')
+    image = models.ImageField('Изображение', upload_to='hotels/')
+    city = models.ForeignKey(Cities, on_delete=models.CASCADE)
+    street = models.CharField('Улица', max_length=100)
+    price = models.IntegerField('Цена')
+    review_points = models.IntegerField('Рейтинг', default=0)
+
+    class Meta:
+        verbose_name = 'Отель'
+        verbose_name_plural = 'Отели'
+
+    def __str__(self):
+        return self.title
+    
+
 
 # class SpecialOffers(models.Model):
 #     country = models.CharField('Страна')

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--==============================Content=================================-->
+    <div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - February 10, 2014!</div>
+        <div class="container_12">
+            <div class="grid_7">
+                <h3>Recent Posts</h3>
+
+
+                {% for hotel in hotels %}
+                <div class="blog">
+                    <time datetime="2014-10-01">15<span>Feb</span></time>
+                    <div class="extra_wrapper">
+                        <div class="text1 col1"><a href="#">{{ hotel.title }}</a></div>Location
+                        <a href="#">{{ hotel.city.city }}</a>
+                    </div>
+                    <div class="clear"></div>
+                    <img src="{{ hotel.image.url }}" alt="" class="img_inner">
+                    <p>{{ hotel.description }} </p>Maecenas vehicula egestas venenatis. Duis massa elit, auctor non pellentesque vel aliquet sit amet erat. Nullam eget dignissim nisi, aliquam feugiat nibh.
+                    <br>
+                    <a href="#" class="link1">LEARN MORE</a>
+                </div>
+                {% endfor %}
+
+
+
+            </div>
+            <div class="grid_3 prefix_1">
+                <h3 class="head1">CATEGORIES</h3>
+                <ul class="list">
+                    <li><a href="#">Suspendisse massa mi </a></li>
+                    <li><a href="#">Porttitor at velit id </a></li>
+                    <li><a href="#">Congue adipiscing </a></li>
+                    <li><a href="#">Vestibulum vitae porta </a></li>
+                    <li><a href="#">Vivamus ac sodales </a></li>
+                    <li><a href="#">Massa quis adipiscing </a></li>
+                    <li><a href="#">Phasellus hendrerit </a></li>
+                    <li><a href="#">Libero in sapien </a></li>
+                    <li><a href="#">Dignissim vel imperdiet </a></li>
+                </ul>
+                <h3 class="head1">ARchives</h3>
+                <ul class="list">
+                    <li><a href="#">November 2013</a></li>
+                    <li><a href="#">October 2013</a></li>
+                    <li><a href="#">September 2013</a></li>
+                    <li><a href="#">August 2013</a></li>
+                    <li><a href="#">July 2013</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
